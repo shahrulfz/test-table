@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "json-server --watch src/app/db/order.json --port 4000 && ng serve",
+    "start": "ng serve",
+    "server": "json-server --watch src/app/db/order.json --port 4000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
