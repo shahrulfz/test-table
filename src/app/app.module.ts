@@ -5,13 +5,21 @@ import {MatTableModule} from '@angular/material/table';
 import { AppComponent } from './app.component';
 import {MatSortModule} from '@angular/material/sort';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import {OrderService} from './services/order.service';
+import { EditComponent } from './components/edit/edit.component';
+import { AddOrderComponent } from './components/add-order/add-order.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditComponent,
+    AddOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +28,15 @@ import {OrderService} from './services/order.service';
     MatTableModule,
     MatSortModule,
     MatButtonModule,
-
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule
+  ],
+  entryComponents: [
+    AddOrderComponent,
+    EditComponent
   ],
   providers: [OrderService],
   bootstrap: [AppComponent]

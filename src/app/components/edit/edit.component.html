@@ -1,0 +1,46 @@
+<div class="example-container">
+    <h2 mat-dialog-title>Order Details</h2>
+    <mat-form-field>
+        <input matInput placeholder="Order Id">
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input matInput placeholder="Service Number">
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input matInput placeholder="Segment Group">
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input matInput placeholder="Product Name">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea matInput placeholder="Remark"></textarea>
+    </mat-form-field>
+  
+    <label>Order Status</label>
+    <mat-radio-group>
+        <mat-radio-button value="Processing">Processing</mat-radio-button> 
+        <mat-radio-button value="Completed">Completed</mat-radio-button>
+    </mat-radio-group>
+          
+    <mat-form-field>
+      <mat-select placeholder="State">
+        <mat-option value="Selangor">Selangor</mat-option>
+        <mat-option value="Terengganu">Terengganu</mat-option>
+        <mat-option value="Sabah">Sabah</mat-option>
+        <mat-option value="Sarawak">Sarawak</mat-option>
+        <mat-option value="Perak">Perak</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Delete</button>
+      <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+      <button mat-button (click) = "save()">Save</button>
+    </mat-dialog-actions>
+  </div>
+  
+  
