@@ -1,6 +1,6 @@
 export interface OrderType {
     serviceNo: string;
-    id: number;
+    id: string;
     group: string;
     productName: string;
     orderStatus: string;

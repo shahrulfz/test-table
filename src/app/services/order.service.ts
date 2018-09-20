@@ -14,4 +14,5 @@ export class OrderService {
   getOrder(): Observable<OrderType[]> {
     return this.http.get<OrderType[]>(this.serviceUrl);
   }
+
 }
