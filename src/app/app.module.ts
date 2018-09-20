@@ -16,11 +16,12 @@ import { MatInputModule } from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     EditComponent,
-    AddOrderComponent
+    AddOrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
   ],
   entryComponents: [
     AddOrderComponent,
-    EditComponent
+    EditComponent,
   ],
   providers: [OrderService],
   bootstrap: [AppComponent]

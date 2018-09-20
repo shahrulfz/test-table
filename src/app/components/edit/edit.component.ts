@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, FormGroup } from '@angular/forms'
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-edit',
@@ -11,7 +12,9 @@ export class EditComponent implements OnInit {
   
   myForm: FormGroup;
 
-  constructor(public dialogRef:MatDialogRef<EditComponent>,
+  constructor(
+    // private orderService:OrderService,
+    public dialogRef:MatDialogRef<EditComponent>,
   @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder) {
 
       //checkbox
@@ -32,7 +35,18 @@ export class EditComponent implements OnInit {
   ngOnInit() {
   }
 
-  add(){
-    this.dialogRef.close("Data Added");
+  save(data){
+
+  //   let test = {
+  //   id:	data.id,
+  //   serviceNo:	"cuba",
+  //   group:	"cuba",
+  //   productName:	"cuba",
+  //   orderStatus:	"cuba",
+  //   remark:	"cuba",
+  //   state:	"cuba"
+  //   }
+  //   this.orderService.updateOrder(test);
+  //   this.dialogRef.close("Data Added");
   }
 }

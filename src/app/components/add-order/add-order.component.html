@@ -1,34 +1,34 @@
 <div class="example-container">
   <h2 mat-dialog-title>Add new Order</h2>
   <mat-form-field>
-      <input matInput placeholder="Order Id" required>
+      <input #id matInput placeholder="Order Id" required [(ngModel)]='listFilter' name="listFilter">
   </mat-form-field>
 
   <mat-form-field>
-      <input matInput placeholder="Service Number" required>
+      <input #serviceNumber matInput placeholder="Service Number" required [(ngModel)]='listFilter2' name="listFilter2">
   </mat-form-field>
 
   <mat-form-field>
-      <input matInput placeholder="Segment Group">
+      <input #group matInput placeholder="Segment Group">
   </mat-form-field>
 
   <mat-form-field>
-      <input matInput placeholder="Product Name">
+      <input #product matInput placeholder="Product Name">
   </mat-form-field>
 
   <mat-form-field>
-    <textarea matInput placeholder="Remark" required></textarea>
+    <textarea #remark matInput placeholder="Remark" required [(ngModel)]='listFilter3' name="listFilter3"></textarea>
   </mat-form-field>
 
   <label>Order Status</label>
-  <mat-radio-group>
+  <mat-radio-group #status="matRadioGroup">
       <mat-radio-button value="Processing">Processing</mat-radio-button> 
       <mat-radio-button value="Completed">Completed</mat-radio-button>
   </mat-radio-group>
     
   
   <mat-form-field>
-    <mat-select placeholder="State" required>
+    <mat-select placeholder="State" required #state [(ngModel)]='listFilter4' name="listFilter4">
         <mat-option value="Selangor">Selangor</mat-option>
         <mat-option value="Terengganu">Terengganu</mat-option>
         <mat-option value="Sabah">Sabah</mat-option>
@@ -49,7 +49,7 @@
   <mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancel</button>
     <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-    <button mat-button (click) = "add()">Add</button>
+    <button [disabled]="(!listFilter || !listFilter2 || !listFilter3 || !listFilter4 )" mat-button (click) = "addOrder(id.value,serviceNumber.value,group.value,product.value,remark.value,status.value, state.value)">Add</button>
   </mat-dialog-actions>
 </div>
 

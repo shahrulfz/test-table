@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-add-order',
@@ -8,7 +9,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class AddOrderComponent implements OnInit {
 
-  constructor(public dialogRef:MatDialogRef<AddOrderComponent>,
+  constructor(
+    private orderService:OrderService,
+    public dialogRef:MatDialogRef<AddOrderComponent>,
+    public dialog: MatDialog,
   @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit() {
@@ -16,6 +20,22 @@ export class AddOrderComponent implements OnInit {
 
   add(){
     this.dialogRef.close("Data Added");
+  }
+
+  addOrder(id,serviceNumber,group,product,remark,status, state){
+
+    let order = {
+      id,
+      serviceNo:	serviceNumber,
+      group,
+      productName:	product,
+      orderStatus:	status,
+      remark,
+      state,
+    }
+  
+    this.orderService.addOrder(order).subscribe();
+    
   }
 }
 

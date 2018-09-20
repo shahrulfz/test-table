@@ -36,10 +36,12 @@ export class AppComponent implements OnInit {
     const dialogRef = this.dialog.open(AddOrderComponent, {
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
+    dialogRef.afterClosed().subscribe(
+      // result => {
+      // console.log('The dialog was closed');
+      // console.log(result);
+      // }
+    );
   }
 
   editDialog(row): void {
