@@ -1,11 +1,11 @@
 <div class="example-container">
   <h2 mat-dialog-title>Add new Order</h2>
   <mat-form-field>
-      <input matInput placeholder="Order Id">
+      <input matInput placeholder="Order Id" required>
   </mat-form-field>
 
   <mat-form-field>
-      <input matInput placeholder="Service Number">
+      <input matInput placeholder="Service Number" required>
   </mat-form-field>
 
   <mat-form-field>
@@ -17,7 +17,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <textarea matInput placeholder="Remark"></textarea>
+    <textarea matInput placeholder="Remark" required></textarea>
   </mat-form-field>
 
   <label>Order Status</label>
@@ -28,12 +28,21 @@
     
   
   <mat-form-field>
-    <mat-select placeholder="State">
-      <mat-option value="Selangor">Selangor</mat-option>
-      <mat-option value="Terengganu">Terengganu</mat-option>
-      <mat-option value="Sabah">Sabah</mat-option>
-      <mat-option value="Sarawak">Sarawak</mat-option>
-      <mat-option value="Perak">Perak</mat-option>
+    <mat-select placeholder="State" required>
+        <mat-option value="Selangor">Selangor</mat-option>
+        <mat-option value="Terengganu">Terengganu</mat-option>
+        <mat-option value="Sabah">Sabah</mat-option>
+        <mat-option value="Sarawak">Sarawak</mat-option>
+        <mat-option value="Perak">Perak</mat-option>
+        <mat-option value="Johor">Johor</mat-option>
+        <mat-option value="Kelantan">Kelantan</mat-option>
+        <mat-option value="Perlis">Perlis</mat-option>
+        <mat-option value="Melaka">Melaka</mat-option>
+        <mat-option value="Negeri Sembilan">Negeri Sembilan</mat-option>
+        <mat-option value="Pahang">Pahang</mat-option>
+        <mat-option value="Penang">Penang</mat-option>
+        <mat-option value="Kedah">Kedah</mat-option>
+        <mat-option value="Wilayah Persekutuan">Wilayah Persekutuan</mat-option>
     </mat-select>
   </mat-form-field>
 
