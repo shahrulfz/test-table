@@ -42,8 +42,15 @@ export class AppComponent implements OnInit {
     });
   }
 
-  editDialog(): void {
+  editDialog(row): void {
+
+    // console.log(id);
     const dialogRef = this.dialog.open(EditComponent, {
+      // data: {
+      //   currid: id,
+      // }
+
+      data: {...row}
     });
 
     dialogRef.afterClosed().subscribe(result => {

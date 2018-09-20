@@ -1,14 +1,14 @@
 {
     "orders": [
     {"id": "1-5559", "serviceNo": "000745", "group": "Consumer", "productName": "Streamyx", "orderStatus": "Processing", "remark": "124", "state": "Pahang"},
-    {"id": "1-53255", "serviceNo": "00567", "group": "SME", "productName": "Home Line", "orderStatus": "Complete", "remark": "", "state": "Terengganu"},
+    {"id": "1-53255", "serviceNo": "00567", "group": "SME", "productName": "Home Line", "orderStatus": "Completed", "remark": "", "state": "Terengganu"},
     {"id": "1-88410", "serviceNo": "04949", "group": "Consumer", "productName": "Streamyx", "orderStatus": "Processing", "remark": "Nothing", "state": "Johor"},
     {"id": "1-12347", "serviceNo": "0994", "group": "Consumer", "productName": "Business Line", "orderStatus": "Processing", "remark": "", "state": "Pahang"},
-    {"id": "1-2412", "serviceNo": "000865", "group": "SME", "productName": "Home Line", "orderStatus": "Complete", "remark": "", "state": "Kelantan"},
-    {"id": "1-8904", "serviceNo": "00034", "group": "Consumer", "productName": "Streamyx", "orderStatus": "Complete", "remark": "-RM41", "state": "Kedah"},
+    {"id": "1-2412", "serviceNo": "000865", "group": "SME", "productName": "Home Line", "orderStatus": "Completed", "remark": "", "state": "Kelantan"},
+    {"id": "1-8904", "serviceNo": "00034", "group": "Consumer", "productName": "Streamyx", "orderStatus": "Completed", "remark": "-RM41", "state": "Kedah"},
     {"id": "1-4557", "serviceNo": "005575", "group": "SME", "productName": "Home Line", "orderStatus": "Processing", "remark": "", "state": "Selangor"},
-    {"id": "1-7568", "serviceNo": "005795", "group": "SME", "productName": "Business Line", "orderStatus": "Complete", "remark": "", "state": "Perak"},
+    {"id": "1-7568", "serviceNo": "005795", "group": "SME", "productName": "Business Line", "orderStatus": "Completed", "remark": "test", "state": "Perak"},
     {"id": "1-1567", "serviceNo": "00755", "group": "Consumer", "productName": "Home Line", "orderStatus": "Processing", "remark": "", "state": "Pahang"},
-    {"id": "1-7563", "serviceNo": "0033", "group": "Consumer", "productName": "Business Line", "orderStatus": "Complete", "remark": "", "state": "Terengganu"}
+    {"id": "1-7563", "serviceNo": "0033", "group": "Consumer", "productName": "Business Line", "orderStatus": "Completed", "remark": "RM0", "state": "Terengganu"}
     ]
 }
