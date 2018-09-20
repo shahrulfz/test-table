@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  editDialog(row): void {
+  editIDDialog(row): void {
 
     // console.log(id);
     const dialogRef = this.dialog.open(EditComponent, {
@@ -57,7 +57,6 @@ export class AppComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      console.log(result);
     });
   }
 

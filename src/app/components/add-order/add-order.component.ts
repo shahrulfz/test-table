@@ -35,7 +35,8 @@ export class AddOrderComponent implements OnInit {
     }
   
     this.orderService.addOrder(order).subscribe();
-    
+    this.dialogRef.afterClosed();
+
   }
 }
 
