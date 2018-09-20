@@ -32,10 +32,9 @@ export class AddOrderComponent implements OnInit {
       orderStatus:	status,
       remark,
       state,
-    }
-  
-    this.orderService.addOrder(order).subscribe();
-    this.dialogRef.afterClosed();
+    }  
+    
+    this.dialogRef.close(this.orderService.addOrder(order).subscribe(result => {location.reload()}));
 
   }
 }
