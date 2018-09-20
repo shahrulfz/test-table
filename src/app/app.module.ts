@@ -15,6 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { SimpledialogComponent } from './components/simpledialog/simpledialog.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     EditComponent,
     AddOrderComponent,
+    SimpledialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
   entryComponents: [
     AddOrderComponent,
     EditComponent,
+    SimpledialogComponent,
   ],
   providers: [OrderService],
   bootstrap: [AppComponent]

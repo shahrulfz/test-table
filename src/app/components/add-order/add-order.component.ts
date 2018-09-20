@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { OrderService } from '../../services/order.service';
+import { SimpledialogComponent } from '../simpledialog/simpledialog.component';
 
 @Component({
   selector: 'app-add-order',
@@ -32,10 +33,17 @@ export class AddOrderComponent implements OnInit {
       orderStatus:	status,
       remark,
       state,
-    }  
-    
-    this.dialogRef.close(this.orderService.addOrder(order).subscribe(result => {location.reload()}));
+    }
 
+    this.orderService.addOrder(order).subscribe();
+
+    const dialogRef = this.dialog.open(SimpledialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(
+      result => {location.reload()}
+    );
+    
   }
 }
 
