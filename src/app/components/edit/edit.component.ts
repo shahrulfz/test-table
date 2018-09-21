@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { FormBuilder, FormGroup } from '@angular/forms'
 import { OrderService } from '../../services/order.service';
+import { SimpledialogComponent } from '../simpledialog/simpledialog.component';
 
 @Component({
   selector: 'app-edit',
@@ -13,7 +14,8 @@ export class EditComponent implements OnInit {
   myForm: FormGroup;
 
   constructor(
-    // private orderService:OrderService,
+    public dialog: MatDialog,
+    private orderService:OrderService,
     public dialogRef:MatDialogRef<EditComponent>,
   @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder) {
 
@@ -35,18 +37,62 @@ export class EditComponent implements OnInit {
   ngOnInit() {
   }
 
-  save(data){
+  save(id,serviceNumber,group,product,remark,status, state){
 
-  //   let test = {
-  //   id:	data.id,
-  //   serviceNo:	"cuba",
-  //   group:	"cuba",
-  //   productName:	"cuba",
-  //   orderStatus:	"cuba",
-  //   remark:	"cuba",
-  //   state:	"cuba"
-  //   }
-  //   this.orderService.updateOrder(test);
-  //   this.dialogRef.close("Data Added");
+    // console.log(id,serviceNumber,group,product,remark,status, state);
+    if(status === "1"){
+      status = "Processing";
+    }
+    else if(status === "2"){
+      status = "Completed";
+    }
+
+    let order = {
+      id,
+      serviceNo:	serviceNumber,
+      group,
+      productName:	product,
+      orderStatus:	status,
+      remark,
+      state,
+    }
+    this.orderService.updateOrder(order).subscribe();
+
+    const dialogRef = this.dialog.open(SimpledialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(
+      () => {location.reload()}
+    );
   }
+
+  delete(id,serviceNumber,group,product,remark,status, state){
+
+    if(status === "1"){
+      status = "Processing";
+    }
+    else if(status === "2"){
+      status = "Completed";
+    }
+
+    let order = {
+      id,
+      serviceNo:	serviceNumber,
+      group,
+      productName:	product,
+      orderStatus:	status,
+      remark,
+      state,
+    }
+
+    this.orderService.deleteOrder(order).subscribe();
+
+    const dialogRef = this.dialog.open(SimpledialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(
+      () => {location.reload()}
+    );
+  }
+
 }

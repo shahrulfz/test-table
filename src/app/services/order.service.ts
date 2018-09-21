@@ -15,16 +15,15 @@ export class OrderService {
     return this.http.get<OrderType[]>(this.serviceUrl);
   }
 
-  // updateOrder(data: OrderType): Observable<OrderType[]>{
-  //   console.log(data);
-  //   console.log(data.id);
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-  //   };
+  updateOrder(data: OrderType): Observable<OrderType[]>{
 
-  //   return this.http.put<any>(`${this.serviceUrl}/${data.id}`, data, httpOptions);
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+    };
 
-  // }
+    return this.http.put<any>(`${this.serviceUrl}/${data.id}`, data, httpOptions);
+
+  }
 
   addOrder(order: OrderType): Observable<OrderType> {
 
@@ -35,6 +34,19 @@ export class OrderService {
 
     return this.http.post<OrderType>(this.serviceUrl, order, httpOptions)
     .pipe();
+  }
+
+  deleteOrder(order: OrderType): Observable<OrderType> {
+
+    // console.log(order.id);
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+    };
+
+    return this.http.delete<OrderType>(`${this.serviceUrl}/${order.id}`, httpOptions);
+
+
+    // return;
   }
 
 }

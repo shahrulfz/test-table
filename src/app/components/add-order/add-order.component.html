@@ -20,8 +20,8 @@
     <textarea #remark matInput placeholder="Remark" required [(ngModel)]='listFilter3' name="listFilter3"></textarea>
   </mat-form-field>
 
-  <label>Order Status</label>
-  <mat-radio-group #status="matRadioGroup">
+  <label >Order Status *</label>
+  <mat-radio-group #status="matRadioGroup" [(ngModel)]='listFilter5' name="listFilter5">
       <mat-radio-button value="Processing">Processing</mat-radio-button> 
       <mat-radio-button value="Completed">Completed</mat-radio-button>
   </mat-radio-group>
@@ -49,7 +49,7 @@
   <mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancel</button>
     <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-    <button [disabled]="(!listFilter || !listFilter2 || !listFilter3 || !listFilter4 )" mat-button (click) = "addOrder(id.value,serviceNumber.value,group.value,product.value,remark.value,status.value, state.value)">Add</button>
+    <button [disabled]="(!listFilter || !listFilter2 || !listFilter3 || !listFilter4 || !listFilter5)" mat-button (click) = "addOrder(id.value,serviceNumber.value,group.value,product.value,remark.value,status.value, state.value)">Add</button>
   </mat-dialog-actions>
 </div>
 

@@ -1,37 +1,37 @@
 <div class="example-container">
     <h2 mat-dialog-title>Order Details</h2>
     <mat-form-field>
-        <input matInput placeholder="Order Id" [value]=data.id disabled>
+        <input matInput placeholder="Order Id" [value]=data.id disabled #id>
     </mat-form-field>
   
     <mat-form-field>
-        <input matInput placeholder="Service Number" [value]=data.serviceNo required>
+        <input matInput placeholder="Service Number" [value]=data.serviceNo required #serviceNumber> 
         
     </mat-form-field>
   
     <mat-form-field>
-        <input matInput placeholder="Segment Group" [value]=data.group>
+        <input matInput placeholder="Segment Group" [value]=data.group #group>
     </mat-form-field>
   
     <mat-form-field>
-        <input matInput placeholder="Product Name" [value]=data.productName>
+        <input matInput placeholder="Product Name" [value]=data.productName #product>
     </mat-form-field>
   
     <mat-form-field>
-      <textarea matInput placeholder="Remark" [value]=data.remark required></textarea>
+      <textarea matInput placeholder="Remark" [value]=data.remark required #remark></textarea>
     </mat-form-field>
   
     <label>Order Status *</label>
 
     <div [formGroup]="myForm">
-        <mat-radio-group formControlName="options">
+        <mat-radio-group #status="matRadioGroup" formControlName="options" >
             <mat-radio-button value="1">Processing</mat-radio-button>
             <mat-radio-button  value="2">Completed</mat-radio-button>
         </mat-radio-group>
     </div>
     <p></p>
     <mat-form-field>
-      <mat-select placeholder="State" [value]=data.state required>
+      <mat-select #state placeholder="State" [value]=data.state required>
         <mat-option value="Selangor">Selangor</mat-option>
         <mat-option value="Terengganu">Terengganu</mat-option>
         <mat-option value="Sabah">Sabah</mat-option>
@@ -51,9 +51,9 @@
   
     <mat-dialog-actions>
         <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button mat-dialog-close>Delete</button>
+      <button mat-button mat-dialog-close (click) = "delete(id.value,serviceNumber.value,group.value,product.value,remark.value,status.value, state.value)">Delete </button>
       <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-      <button mat-button (click) = "save(data)">Save</button>
+      <button [disabled]="(!serviceNumber.value || !group.value || !remark.value || !status.value)"mat-button (click) = "save(id.value,serviceNumber.value,group.value,product.value,remark.value,status.value, state.value)">Save</button>
     </mat-dialog-actions>
   </div>
   
